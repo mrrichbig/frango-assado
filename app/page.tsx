@@ -623,184 +623,76 @@ export default function DeliveryExpressApp() {
 
       {/* Products Section - Only show when location is confirmed */}
       {currentSection === "products" && hasAddress && (
-        <div className="min-h-screen pb-24">
-          <div className="p-6 pt-20 max-w-lg mx-auto">
-            <div className="flex justify-center mb-4">
-              <div className="w-32 h-32 bg-gradient-to-br from-orange-200 via-orange-300 to-red-300 rounded-full flex items-center justify-center border-4 border-white shadow-lg overflow-hidden">
-                <Image
-                  src="/placeholder.svg?height=120&width=120"
-                  alt="Logo Empresa"
-                  width={120}
-                  height={120}
-                  className="object-contain"
-                />
+        <div className="min-h-screen pb-24 bg-white">
+          {/* Header com fundo bege/creme */}
+          <div className="bg-[#F5E6D3] pt-20 pb-24 relative">
+            {/* Área do Banner */}
+            <div className="text-center py-6">
+              <span className="text-gray-700 font-medium">local banner 1</span>
+            </div>
+            
+            {/* Foto de Perfil - posicionada para sobrepor as seções */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-20">
+              <div className="w-44 h-44 bg-[#6ABF4B] rounded-full flex items-center justify-center border-4 border-white shadow-lg">
+                <span className="text-white font-medium text-center px-4">local foto perfil:</span>
               </div>
             </div>
-
-            <Card className="mb-6 border border-orange-200 rounded-2xl shadow-lg">
-              <CardContent className="p-5 bg-white">
-                <div className="text-center">
-                  {/* Nome da loja com verificação */}
-                  <div className="flex items-center justify-center space-x-2 mb-3">
-                    <h2 className="text-xl font-bold text-gray-800">Frango Goiano</h2>
-                    <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-                      <CheckCircle className="w-3 h-3 text-white" />
-                    </div>
-                  </div>
-
-                  {/* Informações organizadas em linhas separadas */}
-                  <div className="space-y-2 mb-3">
-                    {/* Linha 1: Pedido mínimo e localização */}
-                    <div className="flex items-center justify-center space-x-4 text-sm text-gray-600">
-                      <div className="flex items-center space-x-1">
-                        <Coins className="w-4 h-4" />
-                        <span>Pedido mín. R$ 24,99</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <MapPin className="w-4 h-4" />
-                        <span>{userCity}</span>
-                      </div>
-                    </div>
-
-                    {/* Linha 2: Apenas frete, sem tempo de entrega */}
-                    <div className="flex items-center justify-center space-x-4 text-sm text-gray-600">
-                      <div className="flex items-center space-x-1">
-                        <Bike className="w-4 h-4 text-gray-600" />
-                        <span className="text-gray-600">Entrega Grátis</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Avaliação */}
-                  <div className="flex items-center justify-center space-x-1 mb-3">
-                    <div className="flex items-center space-x-1">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                      ))}
-                    </div>
-                    <span className="font-bold text-base ml-2">4,8</span>
-                    <span className="text-gray-600 text-sm">(1.847 avaliações)</span>
-                  </div>
-
-                  {/* Status de funcionamento */}
-                  <div className="bg-gradient-to-r from-green-100 to-emerald-100 rounded-full px-4 py-2 inline-flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full flex items-center justify-center">
-                      <Clock className="w-3 h-3 text-white" />
-                    </div>
-                    <span className="text-green-700 font-bold text-sm">ABERTO AGORA - ATÉ 14:00</span>
-                  </div>
+          </div>
+          
+          {/* Conteúdo principal */}
+          <div className="px-6 pt-24 pb-6 max-w-lg mx-auto">
+            {/* Informações do restaurante */}
+            <div className="text-center mb-6">
+              {/* Nome da loja com verificação */}
+              <div className="flex items-center justify-center space-x-2 mb-2">
+                <h2 className="text-2xl font-bold text-gray-800">Frango Goiano</h2>
+                <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-4 h-4 text-white" />
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+
+              {/* Pedido Mínimo */}
+              <p className="text-gray-400 text-sm mb-1">Pedido Mínimo: R$ 30,00</p>
+              
+              {/* Entrega Grátis */}
+              <div className="flex items-center justify-center space-x-1 text-sm mb-2">
+                <Bike className="w-4 h-4 text-gray-400" />
+                <span className="text-gray-400">Entrega</span>
+                <span className="text-green-500 font-medium">Grátis</span>
+              </div>
+
+              {/* Avaliação */}
+              <div className="flex items-center justify-center space-x-1 mb-3">
+                <div className="flex items-center">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <span className="font-bold text-sm ml-1">4,9</span>
+                <span className="text-gray-400 text-sm">(1.992 avaliações)</span>
+              </div>
+
+              {/* Status de funcionamento */}
+              <div className="inline-flex items-center space-x-2 bg-green-50 border border-green-200 rounded-full px-4 py-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span className="text-green-600 font-bold text-sm">ABERTO AGORA - ATÉ 14:00</span>
+              </div>
+            </div>
 
             {/* Promotions Section */}
             <div className="mb-6">
               <div className="flex items-center space-x-2 mb-4">
                 <h3 className="text-base font-bold text-gray-800">PROMOÇÕES</h3>
-                <Flame className="w-4 h-4 text-red-500" />
+                <span className="text-lg">🔥</span>
               </div>
-              <div className="max-w-md mx-auto space-y-2">
+              <div className="space-y-3">
                 {promoProducts.map((product, index) => (
                   <Card
                     key={product.id}
-                    className={`rounded-xl border-0 overflow-hidden shadow-md relative ${
-                      product.isHighlight
-                        ? "bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-400 shadow-lg transform scale-[1.02]"
-                        : "bg-white"
-                    }`}
+                    className="rounded-2xl border-0 overflow-hidden shadow-sm bg-gray-100"
                   >
-                    {/* Destaque especial para Combo Família */}
-                    {product.isHighlight && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-orange-400/10 pointer-events-none"></div>
-                    )}
-
-                    <CardContent className="p-3 relative z-5">
-                      <div className="flex items-center space-x-3">
-                        {/* Product Icon - Replace the emoji with small image */}
-                        <div
-                          className={`w-16 h-16 bg-gradient-to-br rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden ${
-                            product.isHighlight
-                              ? "from-yellow-100 to-orange-200 border-2 border-yellow-300"
-                              : "from-orange-100 to-orange-200"
-                          }`}
-                        >
-                          <Image
-                            src={product.image || "/placeholder.svg"}
-                            alt="Serviço"
-                            width={64}
-                            height={64}
-                            className="w-full h-full object-cover rounded-xl"
-                          />
-                        </div>
-
-                        {/* Product Info */}
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between mb-1">
-                            <h4
-                              className={`font-bold text-sm leading-tight ${
-                                product.isHighlight ? "text-orange-800" : "text-gray-800"
-                              }`}
-                            >
-                              {product.name}
-                            </h4>
-                            <Badge className="bg-red-500 text-white text-xs ml-2 flex-shrink-0">
-                              -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
-                            </Badge>
-                          </div>
-
-                          <p
-                            className={`text-xs mb-2 line-clamp-1 ${
-                              product.isHighlight ? "text-orange-700" : "text-gray-600"
-                            }`}
-                          >
-                            {product.description}
-                          </p>
-
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center space-x-2">
-                              <span className="text-gray-400 line-through text-xs">
-                                R$ {product.originalPrice.toFixed(2)}
-                              </span>
-                              <span
-                                className={`text-lg font-bold ${
-                                  product.isHighlight ? "text-orange-700" : "text-orange-600"
-                                }`}
-                              >
-                                R$ {product.price.toFixed(2)}
-                              </span>
-                            </div>
-
-                            <Button
-                              onClick={() => handleProductClick(product)}
-                              disabled={isLoading}
-                              className={`font-bold px-6 py-3 rounded-full shadow-lg text-sm h-auto transform hover:scale-105 transition-all duration-200 ${
-                                product.isHighlight
-                                  ? "bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white shadow-xl"
-                                  : "bg-orange-500 hover:bg-orange-600 text-white"
-                              }`}
-                            >
-                              {isLoading ? (
-                                <div className="flex items-center space-x-1">
-                                  <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                                  <span>...</span>
-                                </div>
-                              ) : (
-                                <span>Solicitar</span>
-                              )}
-                            </Button>
-                          </div>
-
-                          {/* Adicionar badge MAIS PEDIDO aqui para produtos em destaque */}
-                          {product.isHighlight && (
-                            <div className="flex items-center mt-1">
-                              <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-2 py-1 rounded-full text-xs font-bold flex items-center space-x-1">
-                                <Crown className="w-3 h-3" />
-                                <span>MAIS PEDIDO</span>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
+                    <CardContent className="p-4 min-h-[100px]">
+                      {/* Card vazio para placeholder visual */}
                     </CardContent>
                   </Card>
                 ))}
