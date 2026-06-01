@@ -646,8 +646,8 @@ export default function DeliveryExpressApp() {
               {/* Nome da loja com verificação */}
               <div className="flex items-center justify-center space-x-2 mb-2">
                 <h2 className="text-2xl font-bold text-gray-800">Frango Goiano</h2>
-                <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-4 h-4 text-white" />
+                <div className="w-3.5 h-3.5 bg-blue-500 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-2.5 h-2.5 text-white" />
                 </div>
               </div>
 
@@ -656,7 +656,7 @@ export default function DeliveryExpressApp() {
               
               {/* Entrega Grátis */}
               <div className="flex items-center justify-center space-x-1 text-sm mb-2">
-                <Bike className="w-4 h-4 text-gray-400" />
+                <Bike className="w-2.5 h-2.5 text-gray-400" />
                 <span className="text-gray-400">Entrega</span>
                 <span className="text-green-500 font-medium">Grátis</span>
               </div>
@@ -665,7 +665,7 @@ export default function DeliveryExpressApp() {
               <div className="flex items-center justify-center space-x-1 mb-3">
                 <div className="flex items-center">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    <Star key={star} className="w-2.5 h-2.5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
                 <span className="font-bold text-sm ml-1">4,9</span>
@@ -681,9 +681,9 @@ export default function DeliveryExpressApp() {
 
             {/* Promotions Section */}
             <div className="mb-6">
-              <div className="flex items-center space-x-2 mb-4">
+              <div className="flex items-center space-x-1 mb-4">
                 <h3 className="text-base font-bold text-gray-800">PROMOÇÕES</h3>
-                <span className="text-lg">🔥</span>
+                <Flame className="w-4 h-4 text-yellow-400" strokeWidth={1.5} />
               </div>
               <div className="space-y-3">
                 {promoProducts.map((product, index) => (
