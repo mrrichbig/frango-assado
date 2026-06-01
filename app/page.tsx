@@ -642,7 +642,7 @@ export default function DeliveryExpressApp() {
                 <div className="text-center">
                   {/* Nome da loja com verificação */}
                   <div className="flex items-center justify-center space-x-2 mb-3">
-                    <h2 className="text-xl font-bold text-gray-800">Delivery Express</h2>
+                    <h2 className="text-xl font-bold text-gray-800">Frango Goiano</h2>
                     <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
                       <CheckCircle className="w-3 h-3 text-white" />
                     </div>
